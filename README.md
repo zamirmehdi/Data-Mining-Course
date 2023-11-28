@@ -50,11 +50,11 @@ All projects are accompanied by their respective codes, necessary datasets (if r
 
 <h3> 1. Data Preprocessing </h3>
 
-Utilized pandas and Scikit-learn for data preprocessing. Employed the Iris dataset.
+Utilized pandas and Scikit-learn for data preprocessing. Employed the `Iris` dataset.
 
 <h3> 2. Classification </h3>
 
-Designed and trained a neural network to classify two datasets: "make circles" and "Fashion MNIST."
+Designed and trained a neural network to classify two datasets: `Make circles` and `Fashion MNIST.`
 
 <h3> 3. Clustering and Association Rules </h3>
 
