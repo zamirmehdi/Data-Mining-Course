@@ -21,7 +21,7 @@
         <li><a href="#-1-data-preprocessing-">1. Data Preprocessing</a></li>
         <li><a href="#-2-classification-">2. Classification</a></li>
         <li><a href="#-3-clustering-and-association-rules-">3. Clustering and Association Rules</a></li>
-        <li><a href="#-4-disease-prediction-final-project-">4. Disease Prediction - Final Project</a></li>
+        <li><a href="#-4-disease-prediction---final-project-">4. Disease Prediction - Final Project</a></li>
       </ul>
     </li>
     <li> <a href="#course-information">Course Information</a>
