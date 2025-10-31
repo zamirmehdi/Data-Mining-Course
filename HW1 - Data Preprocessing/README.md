@@ -516,7 +516,7 @@ Questions or collaborations? Feel free to reach out!
 
 <div align="center">
 
-[⬆ Back to Main Repository](ps://github.com/zamirmehdi/Data-Mining-Course)
+[⬆ Back to Main Repository](https://github.com/zamirmehdi/Data-Mining-Course)
 
 </div>
 
