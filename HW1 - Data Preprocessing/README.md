@@ -264,8 +264,9 @@ HW1 - Data Preprocessing/
 │   └── iris.data              # Raw Iris dataset (150 samples)
 ├── src/
 │   └── main.py                # Complete preprocessing pipeline
-├── Project1.pdf               # Assignment instructions (Persian)
-├── Report1_Amirmehdi Zarrinnezhad.pdf  # Implementation report
+├── doc/
+|   ├── Project1.pdf               # Assignment instructions (Persian)
+|   └── Report1_Amirmehdi Zarrinnezhad.pdf  # Implementation report
 └── README.md                  # This file
 ```
 
