@@ -540,6 +540,14 @@ Questions or collaborations? Feel free to reach out!
 
 <div align="center">
 
+[⬆ Back to Main Repository](https://github.com/zamirmehdi/Data-Mining-Course)
+
+</div>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<div align="center">
+
 ⭐ **If you found this project helpful, please consider giving it a star!** ⭐
 
 *Amirmehdi Zarrinnezhad*
