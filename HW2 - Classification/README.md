@@ -1,6 +1,6 @@
 # HW2 - Classification
 
-Implementation of classification algorithms including Decision Trees, Neural Networks, and Convolutional Neural Networks using TensorFlow. The project covers theoretical concepts, manual decision tree construction, and deep learning for image classification.
+Implementation of classification algorithms, including Decision Trees, Neural Networks, and Convolutional Neural Networks using TensorFlow. The project covers theoretical concepts, manual decision tree construction, and deep learning for image classification.
 
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange.svg)](#)
@@ -12,15 +12,15 @@ Implementation of classification algorithms including Decision Trees, Neural Net
 - [Overview](#-overview)
 - [Assignment Components](#-assignment-components)
   - [Theoretical Questions](#theoretical-questions)
-  - [Part 1: Neural Networks with TensorFlow Playground](#part-1-neural-networks-with-tensorflow-playground)
+  - [Part 1: Neural Network Experiments with Circular Data](#part-1-neural-network-experiments-with-circular-data)
   - [Part 2: Fashion MNIST Classification](#part-2-fashion-mnist-classification)
-- [Project Structure](#-project-structure)
+- [Project Structure](#%EF%B8%8F-project-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Key Concepts Demonstrated](#-key-concepts-demonstrated)
 - [Results & Performance](#-results--performance)
 - [Learning Outcomes](#-learning-outcomes)
-- [Course Information](#-course-information)
+- [Project Information](#ℹ%EF%B8%8F-project-information)
 - [Contact](#-contact)
 
 </details>
@@ -166,51 +166,223 @@ where pi is the probability of class i
 5. **Data augmentation**: Increase training data diversity
 6. **Pruning**: Remove unnecessary tree branches/neurons
 
-### Part 1: Neural Networks with TensorFlow Playground
+### Part 1: Neural Network Experiments with Circular Data
 
-**Objective**: Understand neural network behavior through interactive experimentation
+**Objective**: Understand neural network behavior through systematic experimentation with different architectures and configurations.
 
-**Tasks**:
+**Dataset Generation**:
+```python
+from sklearn.datasets import make_circles
+X, Y = make_circles(n_samples=1500, noise=0.05)
+```
 
-#### 1.1 Linear Model (No Activation Functions)
-- Build network without activation functions
-- **Question**: Can it classify circular data patterns?
-- **Expected Result**: No - linear models cannot learn non-linear patterns
+**Data Characteristics**:
+- **1500 samples** forming two concentric circles
+- **Non-linearly separable** - requires non-linear decision boundary
+- **5% noise** added to increase difficulty
+- **Binary classification** (inner circle vs outer circle)
 
-#### 1.2 Non-linear Model (Linear Activation)
-- Add linear activation function
-- **Question**: Does classification improve?
-- **Expected Result**: Minimal improvement - linear activation doesn't add non-linearity
+---
 
-#### 1.3 Regression Loss for Classification
-- Use regression loss (MSE) instead of classification loss
-- **Question**: Does it work properly?
-- **Expected Result**: Poor performance - wrong loss for binary classification
+#### Experiment 1: No Activation Functions
+**Architecture**:
+```python
+model = Sequential([
+    Dense(8, activation=None),   # Hidden layer 1
+    Dense(16, activation=None),  # Hidden layer 2
+    Dense(1, activation=None)    # Output layer
+])
+```
 
-#### 1.4 Single Hidden Layer
-- Create network with 1 hidden layer
-- **Question**: Can it now classify the data?
-- **Expected Result**: Yes - with non-linear activation, can learn patterns
+**Configuration**:
+- Loss: `binary_crossentropy`
+- Optimizer: `adam`
+- Epochs: 200
+- Batch size: 16
 
-#### 1.5 Learning Rate Tuning
-- Experiment with different learning rates
-- Document: Why certain values work better
-- Test: Very low (0.001), low (0.01), medium (0.1), high (0.5), very high (1.0)
+**Results**:
+- **Test Accuracy**: ~43%
+- **Conclusion**: Model fails to learn the circular pattern
 
-**Observations**:
-- **Too low**: Slow convergence, may not converge
-- **Too high**: Overshooting, instability, divergence
-- **Optimal**: Balances speed and stability
+**Analysis**:
+Without activation functions, the network is essentially a linear model. Multiple linear layers collapse into a single linear transformation, making it impossible to learn non-linear patterns. The model cannot create the curved decision boundary needed to separate concentric circles.
 
-#### 1.6 Custom Architecture
-- Design best architecture for the problem
-- Explain: Architecture choices and hyperparameters
-- Include: Number of layers, neurons per layer, activation functions
+---
 
-**Requirements**:
-- Screenshot results for each experiment
-- Plot accuracy and loss curves
-- Explain observations
+#### Experiment 2: Linear Activation Functions
+**Architecture**:
+```python
+model = Sequential([
+    Dense(8, activation='linear'),
+    Dense(16, activation='linear'),
+    Dense(1, activation='linear')
+])
+```
+
+**Results**:
+- **Test Accuracy**: ~50% (similar to random guessing)
+- **Conclusion**: Linear activation provides no improvement
+
+**Analysis**:
+Linear activation functions don't introduce non-linearity. The composition of multiple linear functions is still linear: `f(g(x))` is linear if both `f` and `g` are linear. The model still cannot learn the circular decision boundary.
+
+---
+
+#### Experiment 3: Non-linear Activations with Wrong Loss
+**Architecture**:
+```python
+model = Sequential([
+    Dense(8, activation='relu'),
+    Dense(16, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+```
+
+**Configuration**:
+- Loss: `mean_squared_error` (❌ Wrong for classification)
+- Optimizer: `adam`
+
+**Results**:
+- **Test Accuracy**: ~97%
+- **Conclusion**: Works well despite wrong loss function
+
+**Analysis**:
+Even with MSE (regression loss), the model learns well because:
+- ReLU activation introduces non-linearity
+- Sigmoid output constrains predictions to [0,1]
+- MSE still penalizes incorrect predictions
+However, `binary_crossentropy` is theoretically better for binary classification as it's based on maximum likelihood estimation.
+
+---
+
+#### Experiment 4: Single Hidden Layer (Optimal Configuration)
+**Architecture**:
+```python
+model = Sequential([
+    Dense(8, activation='relu'),     # Single hidden layer
+    Dense(1, activation='sigmoid')   # Output layer
+])
+```
+
+**Configuration**:
+- Loss: `binary_crossentropy` ✓
+- Optimizer: `adam`
+- Epochs: 200
+
+**Results**:
+- **Test Accuracy**: ~97-98%
+- **Conclusion**: Single hidden layer sufficient for this problem
+
+**Analysis**:
+This simpler architecture performs as well as the deeper network:
+- ReLU provides non-linearity needed for circular boundary
+- Sigmoid output converts to probabilities
+- Correct loss function (binary crossentropy)
+- **Trade-off**: Slightly slower convergence than 2-layer version
+
+**Observations from Training Curves**:
+- Loss decreases steadily
+- Accuracy plateaus around epoch 50-100
+- No significant overfitting observed
+
+---
+
+#### Experiment 5: Manual Learning Rate = 0.01
+**Architecture**:
+```python
+optimizer = Adam(learning_rate=0.01)  # Manual LR
+model = Sequential([
+    Dense(8, activation='relu'),
+    Dense(20, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+```
+
+**Results**:
+- **Test Accuracy**: ~96%
+- **Conclusion**: Manual LR slightly worse than Adam's adaptive rate
+
+**Analysis**:
+- Learning rate 0.01 is reasonable but not optimal
+- Adam's default adaptive learning rate (starts at 0.001) performs better
+- Manual tuning requires experimentation and domain knowledge
+- Adam automatically adjusts learning rate per parameter
+
+**Learning Rate Comparison**:
+| LR Value | Behavior |
+|----------|----------|
+| 0.0001 | Too slow, may not converge in 200 epochs |
+| 0.001 | Good (Adam default) |
+| 0.01 | Acceptable but less stable |
+| 0.1 | May overshoot, unstable |
+| 1.0 | Diverges |
+
+---
+
+#### Experiment 6: Best Configuration (Final Model)
+**Architecture**:
+```python
+model = Sequential([
+    Dense(8, activation='relu'),
+    Dense(20, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+```
+
+**Configuration**:
+- Loss: `binary_crossentropy` ✓
+- Optimizer: `adam` (adaptive LR) ✓
+- Epochs: 200
+- Batch size: 16
+
+**Results**:
+- **Test Accuracy**: ~98%
+- **Best performing configuration**
+
+**Why This Works Best**:
+1. **ReLU Activation**: Introduces non-linearity efficiently
+   - Computationally cheap
+   - Doesn't suffer from vanishing gradients
+   - Creates piece-wise linear decision boundaries
+
+2. **Sigmoid Output**: 
+   - Outputs probability [0, 1]
+   - Natural for binary classification
+   
+3. **Binary Crossentropy Loss**:
+   - Proper loss for binary classification
+   - Based on maximum likelihood
+   - Stronger gradients than MSE
+
+4. **Adam Optimizer**:
+   - Adaptive learning rates per parameter
+   - Momentum-based optimization
+   - Robust to hyperparameter choices
+
+5. **Architecture Size**:
+   - 8 → 20 → 1 provides sufficient capacity
+   - Not too deep (avoids overfitting)
+   - Not too shallow (can learn complex patterns)
+
+---
+
+### Key Learnings from Part 1
+
+**Essential Components for Non-linear Classification**:
+1. ✅ **Non-linear activation functions** (ReLU, tanh, sigmoid)
+2. ✅ **Appropriate loss function** (binary/categorical crossentropy)
+3. ✅ **Sufficient model capacity** (enough neurons/layers)
+4. ✅ **Good optimizer** (Adam with adaptive learning rate)
+
+**Performance Summary**:
+| Experiment | Activation | Loss | Test Acc |
+|------------|------------|------|----------|
+| 1. No activation | None | BCE | 43% |
+| 2. Linear | Linear | BCE | ~50% |
+| 3. ReLU + Wrong Loss | ReLU/Sigmoid | MSE | 97% |
+| 4. Single Layer | ReLU/Sigmoid | BCE | 97-98% |
+| 5. Manual LR | ReLU/Sigmoid | BCE | 96% |
+| 6. Best Config | ReLU/Sigmoid | BCE | **98%** |
 
 ### Part 2: Fashion MNIST Classification
 
@@ -473,7 +645,7 @@ Epoch 25/25: loss: 0.3116 - accuracy: 0.8843
 ### 4. Memory Errors
 **Solutions**:
 - Reduce batch size
-- Use smaller model
+- Use a smaller model
 - Clear session between runs
 
 ## 🔮 Extensions & Improvements
@@ -503,19 +675,6 @@ After completing this assignment, students can:
 ✅ Interpret confusion matrices
 ✅ Use TensorFlow/Keras for deep learning
 
-## ℹ️ Course Information
-
-**Author**: Amirmehdi Zarrinnezhad  
-**Assignment**: Homework 2 - Classification  
-**Course**: Data Mining  
-**University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021  
-**GitHub Link:** [Classification](https://github.com/zamirmehdi/Data-Mining-Course/new/main/HW2%20-%20Classification)
-
-**Part of Data Mining Course Projects**
-
-[HW1: Preprocessing](../HW1%20-%20Data%20Preprocessing) | [HW2: Classification](.) | [HW3: Clustering & Association Rules](../HW3%20-%20Clustering,%20Association%20rules) | [Final: XGBoost](../Final%20Project%20-%20XGBoost)
-
-
 ## 📚 Theoretical Background
 
 ### Topics Covered:
@@ -529,6 +688,19 @@ After completing this assignment, students can:
 8. **CNNs**: Convolution, pooling, feature extraction
 9. **Optimization**: Gradient descent, Adam optimizer
 10. **Regularization**: Dropout, L1/L2, early stopping
+
+
+## ℹ️ Project Information
+
+**Author**: Amirmehdi Zarrinnezhad  
+**Assignment**: Homework 2 - Classification  
+**Course**: Data Mining  
+**University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021  
+**GitHub Link:** [Classification](https://github.com/zamirmehdi/Data-Mining-Course/new/main/HW2%20-%20Classification)
+
+**Part of Data Mining Course Projects**
+
+[HW1: Preprocessing](../HW1%20-%20Data%20Preprocessing) | [HW2: Classification](.) | [HW3: Clustering & Association Rules](../HW3%20-%20Clustering,%20Association%20rules) | [Final: XGBoost](../Final%20Project%20-%20XGBoost)
 
 ## 📧 Contact
 
@@ -547,7 +719,6 @@ Questions or collaborations? Feel free to reach out!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <div align="center">
-
 ⭐ **If you found this project helpful, please consider giving it a star!** ⭐
 
 *Amirmehdi Zarrinnezhad*
