@@ -17,7 +17,7 @@ A comprehensive collection of 4 data mining and machine learning projects coveri
 
 ---
 
-## 📚 Table of Contents
+<details> <summary><h2>📚 Table of Contents</h2></summary>
 
 - [Overview](#-overview)
 - [Projects](#-projects)
@@ -36,6 +36,8 @@ A comprehensive collection of 4 data mining and machine learning projects coveri
  - [Acknowledgments](#-acknowledgments)
  - [License](#-license) 
  -->
+
+</details>
 
 ---
 
