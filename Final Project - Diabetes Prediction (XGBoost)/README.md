@@ -1216,13 +1216,8 @@ F1 = 2 × (Precision × Recall) / (Precision + Recall)
 
 ---
 
-<div align="center">
-
-**Part of Data Mining Course Projects**
-
-[HW1: Preprocessing](../HW1%20-%20Data%20Preprocessing) | [HW2: Classification](../HW2%20-%20Classification) | [HW3: Clustering & Association Rules](../HW3%20-%20Clustering,%20Association%20rules) | [Final: XGBoost](.)
-
-</div>
+**Part of Data Mining Course Projects**  
+[1: Preprocessing](.) | [2: Classification](../2%20-%20Classification) | [3: Clustering & Association Rules](../3%20-%20Clustering,%20Association%20rules) | [Final: Diabetes Prediction (XGBoost)](../Final%20Project%20-%20Diabetes%20Prediction%20(XGBoost))
 
 ## 📧 Contact
 
