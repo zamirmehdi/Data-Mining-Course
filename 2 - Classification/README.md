@@ -1,4 +1,4 @@
-# HW2 - Classification
+# 2 - Classification
 
 Implementation of classification algorithms, including Decision Trees, Neural Networks, and Convolutional Neural Networks using TensorFlow. The project covers theoretical concepts, manual decision tree construction, and deep learning for image classification.
 
@@ -490,7 +490,7 @@ cm = confusion_matrix(y_test.argmax(axis=1), y_pred.argmax(axis=1))
 ## 🗂️ Project Structure
 
 ```
-HW2 - Classification/
+2 - Classification/
 ├── src/
 │   ├── Programming_part1.ipynb    # TensorFlow Playground experiments
 │   └── Programming_part2.ipynb    # Fashion MNIST CNN
@@ -696,11 +696,11 @@ After completing this assignment, students can:
 **Assignment**: Homework 2 - Classification  
 **Course**: Data Mining  
 **University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021  
-**GitHub Link:** [Classification](https://github.com/zamirmehdi/Data-Mining-Course/new/main/HW2%20-%20Classification)
+**GitHub Link:** [Classification](https://github.com/zamirmehdi/Data-Mining-Course/new/main/2%20-%20Classification)
 
 **Part of Data Mining Course Projects**
 
-[HW1: Preprocessing](../HW1%20-%20Data%20Preprocessing) | [HW2: Classification](.) | [HW3: Clustering & Association Rules](../HW3%20-%20Clustering,%20Association%20rules) | [Final: XGBoost](../Final%20Project%20-%20XGBoost)
+[1: Preprocessing](.) | [2: Classification](../2%20-%20Classification) | [3: Clustering & Association Rules](../3%20-%20Clustering,%20Association%20rules) | [Final: Diabetes Prediction (XGBoost)](../Final%20Project%20-%20Diabetes%20Prediction%20(XGBoost))
 
 ## 📧 Contact
 
