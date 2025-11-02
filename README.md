@@ -25,26 +25,23 @@ A comprehensive collection of 4 data mining and machine learning projects coveri
   - [HW2: Classification](#hw2-classification)
   - [HW3: Clustering & Association Rules](#hw3-clustering--association-rules)
   - [Final Project: XGBoost](#final-project-xgboost)
-- [Technologies & Tools](#-technologies--tools)
+- [Technologies & Tools](#%EF%B8%8F-technologies--tools)
 - [Repository Structure](#-repository-structure)
-- [Installation](#-installation)
+- [Installation](#%EF%B8%8F-installation)
 - [Key Concepts Covered](#-key-concepts-covered)
 - [Learning Outcomes](#-learning-outcomes)
-- [Author](#-author)
-- [Acknowledgments](#-acknowledgments)
-- [License](#-license)
+- [Course Information](#ℹ%EF%B8%8F-course-information)
+- [Contact](#-contact)
+<!-- 
+ - [Acknowledgments](#-acknowledgments)
+ - [License](#-license) 
+ -->
 
 ---
 
 ## 🎯 Overview
 
 This repository contains four comprehensive projects that explore fundamental data mining and machine learning techniques. Each project demonstrates end-to-end implementation from data preprocessing to model evaluation, with detailed documentation and analysis.
-
-**Course Information:**
-- **Institution**: Amirkabir University of Technology (Tehran Polytechnic)
-- **Course**: Data Mining (دادهکاوی)
-- **Semester**: Spring 2021 (بهار 1401)
-- **Student**: Amirmehdi Zarrinnezhad
 
 **Repository Highlights:**
 - 🔥 **4 Complete Projects** with full implementation
@@ -424,24 +421,27 @@ These projects demonstrate skills applicable to:
 
 ---
 
-## 👤 Author
+## ℹ️ Course Information  
+**Author**: Amirmehdi Zarrinnezhad  
+**Course**: Data Mining (دادهکاوی)  
+**University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021  
+**GitHub Link:** [Data Mining Course](https://github.com/zamirmehdi/Data-Mining-Course)  
 
-**Amirmehdi Zarrinnezhad**
+<div align="center">
 
-- 🎓 Student ID: 9731087
-- 🏫 University: Amirkabir University of Technology (Tehran Polytechnic)
-- 📧 Email: amzarrinnezhad@gmail.com
-- 🌐 GitHub: [@zamirmehdi](https://github.com/zamirmehdi)
-- 💼 LinkedIn: [Amirmehdi Zarrinnezhad](https://linkedin.com/in/amirmehdi-zarrinnezhad)
+**Data Mining Course Projects Links**
 
----
+[HW1: Preprocessing](./HW1%20-%20Data%20Preprocessing) • [HW2: Classification](./HW2%20-%20Classification) • [HW3: Clustering](./HW3%20-%20Clustering,%20Association%20rules) • [Final: XGBoost](./Final%20Project%20-%20XGBoost)
+</div>
 
-## 🙏 Acknowledgments
+## 📧 Contact
 
-- **Course Instructor**: Data Mining Faculty, Amirkabir University of Technology
-- **Teaching Assistants**: For guidance and support throughout the course
-- **Dataset Providers**: UCI ML Repository, Fashion MNIST, CDC
-- **Open Source Community**: TensorFlow, scikit-learn, XGBoost contributors
+Questions or collaborations? Feel free to reach out!  
+📧 Email: amzarrinnezhad@gmail.com  
+💬 Open an [Issue](https://github.com/zamirmehdi/Data-Mining-Course/issues)  
+🌐 GitHub: [@zamirmehdi](https://github.com/zamirmehdi) 
+
+<!--
 
 ---
 
@@ -464,20 +464,21 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 ```
+-->
 
 ---
 
-## 📞 Contact & Support
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Questions?
-- 📧 Email: amzarrinnezhad@gmail.com
-- 💬 Open an [Issue](https://github.com/zamirmehdi/Data-Mining-Course/issues)
-- 🌟 Star this repository if you find it helpful!
+<div align="center">
 
-### Contributions
-Contributions, issues, and feature requests are welcome!  
-Feel free to check [issues page](https://github.com/zamirmehdi/Data-Mining-Course/issues).
+⭐ **If you found this project helpful, please consider giving it a star!** ⭐
 
+*Amirmehdi Zarrinnezhad*
+
+</div>
+
+<!--
 ---
 
 <div align="center">
@@ -486,18 +487,4 @@ Feel free to check [issues page](https://github.com/zamirmehdi/Data-Mining-Cours
 
 [![Star History Chart](https://api.star-history.com/svg?repos=zamirmehdi/Data-Mining-Course&type=Date)](https://star-history.com/#zamirmehdi/Data-Mining-Course&Date)
 
----
-
-### 🚀 Quick Links
-
-[HW1: Preprocessing](./HW1%20-%20Data%20Preprocessing) • [HW2: Classification](./HW2%20-%20Classification) • [HW3: Clustering](./HW3%20-%20Clustering,%20Association%20rules) • [Final: XGBoost](./Final%20Project%20-%20XGBoost)
-
----
-
-**Made with ❤️ by [Amirmehdi Zarrinnezhad](https://github.com/zamirmehdi)**
-
-⭐ **If you found this repository helpful, please consider giving it a star!** ⭐
-
-</div>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+-->
