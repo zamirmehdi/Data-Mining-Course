@@ -433,7 +433,8 @@ These projects demonstrate skills applicable to:
 
 **Data Mining Course Projects Links**
 
-[HW1: Preprocessing](./HW1%20-%20Data%20Preprocessing) • [HW2: Classification](./HW2%20-%20Classification) • [HW3: Clustering](./HW3%20-%20Clustering,%20Association%20rules) • [Final: XGBoost](./Final%20Project%20-%20XGBoost)
+[1: Preprocessing](.) | [2: Classification](../2%20-%20Classification) | [3: Clustering & Association Rules](../3%20-%20Clustering,%20Association%20rules) | [Final: Diabetes Prediction (XGBoost)](../Final%20Project%20-%20Diabetes%20Prediction%20(XGBoost))
+
 </div>
 
 ## 📧 Contact
