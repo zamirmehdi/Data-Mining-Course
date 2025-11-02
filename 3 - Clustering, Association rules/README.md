@@ -1,4 +1,4 @@
-# HW3 - Clustering & Association Rules
+# 3 - Clustering & Association Rules
 
 Implementation of unsupervised learning algorithms including K-Means, DBSCAN, Hierarchical Clustering, and Apriori algorithm for association rule mining. The project covers both theoretical concepts and practical applications on real-world datasets.
 
@@ -919,7 +919,7 @@ antecedents → consequents [support, confidence, lift]
 ## 🗂️ Project Structure
 
 ```
-HW3 - Clustering, Association rules/
+3 - Clustering, Association rules/
 ├── src/
 │   ├── Clustering.ipynb           # Clustering algorithms implementation
 │   └── AssociationRules.ipynb     # Apriori and rule mining
@@ -1180,15 +1180,10 @@ After completing this assignment, students can:
 **Assignment**: Homework 3 - Clustering & Association Rules  
 **Course**: Data Mining  
 **University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021  
-**GitHub Link**: [Clustering & Association Rules](https://github.com/zamirmehdi/Data-Mining-Course/tree/main/HW3%20-%20Clustering%2C%20Association%20rules)
+**GitHub Link**: [Clustering & Association Rules](https://github.com/zamirmehdi/Data-Mining-Course/tree/main/3%20-%20Clustering%2C%20Association%20rules)
 
-<div align="center">
-
-**Part of Data Mining Course Projects**
-
-[HW1: Preprocessing](../HW1%20-%20Data%20Preprocessing) | [HW2: Classification](../HW2%20-%20Classification) | [HW3: Clustering & Association Rules](.) | [Final: XGBoost](../Final%20Project%20-%20XGBoost)
-
-</div>
+**Part of Data Mining Course Projects**  
+[1: Preprocessing](.) | [2: Classification](../2%20-%20Classification) | [3: Clustering & Association Rules](../3%20-%20Clustering,%20Association%20rules) | [Final: Diabetes Prediction (XGBoost)](../Final%20Project%20-%20Diabetes%20Prediction%20(XGBoost))
 
 ## 📧 Contact
 
