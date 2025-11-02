@@ -1,4 +1,4 @@
-# HW1 - Data Preprocessing
+# Project 1 - Data Preprocessing
 
 A comprehensive data preprocessing pipeline implementing essential techniques for handling missing values, encoding categorical data, normalization, dimensionality reduction, and visualization using the Iris dataset.
 
@@ -259,7 +259,7 @@ def visualize(data_set):
 ## 🗂️ Project Structure
 
 ```
-HW1 - Data Preprocessing/
+1 - Data Preprocessing/
 ├── data/
 │   └── iris.data              # Raw Iris dataset (150 samples)
 ├── src/
@@ -496,13 +496,13 @@ After completing this project, students can:
 **Assignment**: Data Preprocessing  
 **Course**: Data Mining  
 **University**: Amirkabir University of Technology (Tehran Polytechnic) - Spring 2021    
-**Github Link**: [Data-Preprocessing](https://github.com/zamirmehdi/Data-Mining-Course/new/main/HW1%20-%20Data%20Preprocessing)
+**Github Link**: [Data-Preprocessing](https://github.com/zamirmehdi/Data-Mining-Course/new/main/1%20-%20Data%20Preprocessing)
 
 <div align="center">
 
 **Part of Data Mining Course Projects**
 
-[HW1: Preprocessing](.) | [HW2: Classification](../HW2%20-%20Classification) | [HW3: Clustering & Association Rules](../HW3%20-%20Clustering,%20Association%20rules) | [Final: XGBoost](../Final%20Project%20-%20XGBoost)
+[1: Preprocessing](.) | [2: Classification](../2%20-%20Classification) | [3: Clustering & Association Rules](../3%20-%20Clustering,%20Association%20rules) | [Final: Diabetes Prediction (XGBoost)](../Final%20Project%20-%20Diabetes%20Prediction%20(XGBoost))
 
 </div>
 
